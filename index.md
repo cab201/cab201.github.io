@@ -1,5 +1,5 @@
 ---
-layout: Home
+layout: home
 title: Home
 nav-order: 1
 description: "CAB201 - Programming Principles Notes"

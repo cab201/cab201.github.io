@@ -24,16 +24,16 @@ search:
   # Default: 10
   preview_words_after: 10
 
-# callouts:
-#   warning:
-#     title: Warning
-#     color: red
-#   important:
-#     title: Important
-#     color: purple
-#   note:
-#     title: Note
-#     color: blue
-#   highlight:
-#     title: Highlight
-#     color: yellow
+callouts:
+  warning:
+    title: Warning
+    color: red
+  important:
+    title: Important
+    color: purple
+  note:
+    title: Note
+    color: blue
+  highlight:
+    title: Highlight
+    color: yellow
