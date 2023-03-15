@@ -16,6 +16,16 @@ This website contains notes for the CAB201 - Programming Principles unit at the 
 ---
 
 {: .warning }
-The notes are not intended to be a replacement for the lectures and tutorials, and should not be used as a substitute for attending lectures and tutorials.
+The notes are not intended to be a replacement for the lectures and tutorials, and should not be used as a substitute for watching lectures and attending tutorials.
 
 To get started, click on the links in the sidebar to navigate to the relevant notes.
+
+## Quick Links: Download the Workshop Source Code
+
+### Week 3 - Collections
+
+{: .important-title }
+> Download the Workshop Source Code
+> 
+> [Tuesday Class (9-11am)](https://github.com/cab201/prac-03/zipball/23se1-tue-9){: .btn .btn-purple .mr-2 }
+> [Wednesday Class (9-11am)](https://github.com/cab201/prac-03/zipball/23se1-wed-9){: .btn .btn-purple .mr-2 }
