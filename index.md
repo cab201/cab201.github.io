@@ -22,7 +22,7 @@ To get started, click on the links in the sidebar to navigate to the relevant no
 
 ## Quick Links: Download the Workshop Source Code
 
-### Week 3 - Collections
+### [Week 3 - Collections](./weekly-content/week-3)
 
 {: .important-title }
 > Download the Source Code
