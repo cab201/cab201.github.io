@@ -5,7 +5,7 @@ nav_order: 5
 permalink: /weekly-content/week-4
 ---
 
-# Week 4 - Collections
+# Week 4 - Methods
 {: .no_toc }
 
 <details open markdown="block">
