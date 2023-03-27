@@ -20,7 +20,7 @@ The notes are not intended to be a replacement for the lectures and tutorials, a
 
 To get started, click on the links in the sidebar to navigate to the relevant notes.
 
-## Quick Links: Download the Workshop Source Code
+## Quick Links
 
 ### [Week 3 - Collections](./weekly-content/week-3)
 
@@ -38,3 +38,11 @@ To get started, click on the links in the sidebar to navigate to the relevant no
 > 
 > [Tuesday Class (9-11am)](https://github.com/cab201/prac-04/archive/23se1-tue-9.zip){: .btn .btn-purple .mr-2 }
 > [Wednesday Class (9-11am)](https://github.com/cab201/prac-04/archive/23se1-wed-9.zip){: .btn .btn-purple .mr-2 }
+
+### [Week 5 - Streams](./weekly-content/week-5)
+
+{: .important-title }
+> Download the Source Code
+>
+> [Tuesday Class (9-11am)](https://github.com/cab201/prac-05/archive/23se1-tue-9.zip){: .btn .btn-purple .mr-2 }
+> [Wednesday Class (9-11am)](https://github.com/cab201/prac-05/archive/23se1-wed-9.zip){: .btn .btn-purple .mr-2 }
