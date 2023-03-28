@@ -148,10 +148,20 @@ Note that the `using` statement is used to ensure that the `StreamReader` object
 
 To write to a file, you can use a `StreamWriter` object.
 
-The following code creates a `StreamWriter` object to write to the `C:\Users\Public\Documents\MyFile.txt`, then writes the text "Hello World!" to the file.
+The following code creates a `StreamWriter` object to write to the `C:\Users\Public\Documents\MyFile.txt`, then writes the text "Hello World!" to the file. This will overwrite all the current content in the file.
 
 ```csharp
-using (StreamWriter writer = new StreamWriter("C:\Users\Public\Documents\MyFile.txt"))
+string path = "C:\Users\Public\Documents\MyFile.txt";
+using (StreamWriter writer = new StreamWriter(path))
+{
+    writer.WriteLine("Hello World!");
+}
+```
+
+To append to the file instead, set the `append` parameter in the `StreamWriter`'s constructor to `true`:
+
+```csharp
+using (StreamWriter writer = new StreamWriter(path, append: true))
 {
     writer.WriteLine("Hello World!");
 }
