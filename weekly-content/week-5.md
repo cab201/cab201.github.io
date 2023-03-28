@@ -126,6 +126,22 @@ using (StreamReader reader = new StreamReader("C:\Users\Public\Documents\MyFile.
 }
 ```
 
+Alternatively, use `!readline.EndOfStream` to read through the file.
+
+```csharp
+string path = "C:\Users\Public\Documents\MyFile.txt";
+using (StreamReader reader = new StreamReader(path))
+{
+    string line = null;
+    // Read through the whole file
+    do
+    {
+        line = reader.ReadLine();
+        Console.WriteLine(line);
+    } while (!reader.EndOfStream);
+}
+```
+
 Note that the `using` statement is used to ensure that the `StreamReader` object is disposed of correctly. If you do not use the `using` statement, you must call the `StreamReader.Close()` method to dispose of the object.
 
 ## File Writing
