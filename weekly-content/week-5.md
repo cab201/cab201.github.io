@@ -126,16 +126,42 @@ using (StreamReader reader = new StreamReader("C:\Users\Public\Documents\MyFile.
 }
 ```
 
+Alternatively, use `!readline.EndOfStream` to read through the file.
+
+```csharp
+string path = "C:\Users\Public\Documents\MyFile.txt";
+using (StreamReader reader = new StreamReader(path))
+{
+    string line = null;
+    // Read through the whole file
+    do
+    {
+        line = reader.ReadLine();
+        Console.WriteLine(line);
+    } while (!reader.EndOfStream);
+}
+```
+
 Note that the `using` statement is used to ensure that the `StreamReader` object is disposed of correctly. If you do not use the `using` statement, you must call the `StreamReader.Close()` method to dispose of the object.
 
 ## File Writing
 
 To write to a file, you can use a `StreamWriter` object.
 
-The following code creates a `StreamWriter` object to write to the `C:\Users\Public\Documents\MyFile.txt`, then writes the text "Hello World!" to the file.
+The following code creates a `StreamWriter` object to write to the `C:\Users\Public\Documents\MyFile.txt`, then writes the text "Hello World!" to the file. This will overwrite all the current content in the file.
 
 ```csharp
-using (StreamWriter writer = new StreamWriter("C:\Users\Public\Documents\MyFile.txt"))
+string path = "C:\Users\Public\Documents\MyFile.txt";
+using (StreamWriter writer = new StreamWriter(path))
+{
+    writer.WriteLine("Hello World!");
+}
+```
+
+To append to the file instead, set the `append` parameter in the `StreamWriter`'s constructor to `true`:
+
+```csharp
+using (StreamWriter writer = new StreamWriter(path, append: true))
 {
     writer.WriteLine("Hello World!");
 }
