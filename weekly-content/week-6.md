@@ -186,7 +186,7 @@ A property is a member that provides a flexible mechanism to read, write, or com
 
 The following example creates a property named `Name` for the `Person` class that operates on the `name` field.
 - The `get` accessor returns the value of the `name` field.
-- The `set` accessor sets the value of the `name` field while ensuring that the value is not an empty string, and that the first letter is capitalized. If the value is empty, set the `name` field to `"Invalid"`. If the first letter is not capitalized, capitalize it.
+- The `set` accessor sets the value of the `name` field while ensuring that the value is not an empty string, and that the first letter is capitalized. If the value is empty, set the `name` field to `"Invalid"`. If the first letter is not capitalized, capitalize it. The `value` keyword is used to refer to the value being assigned to the property.
 
 Note that the constructor is modified to use the `Name` property instead of the `name` field.
 
