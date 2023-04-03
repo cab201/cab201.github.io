@@ -30,8 +30,6 @@ permalink: /practicals/week-5
 
 This week we are looking at streams to read and write files.
 
-# CAB201 Programming Principles
-
 # Worksheet 5: Streams
 
 This week we are looking at streams. Streams are an alternative method of inputting and outputting data. You would already have seen one stream, the console, however, this week we are looking at other streams, mainly files.
