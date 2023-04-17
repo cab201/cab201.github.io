@@ -66,7 +66,28 @@ finally
 }
 ```
 
-### A Detailed Example
+### Common Exceptions
+
+|Exception Class|Description|
+|---|---|
+|ArgumentException|Raiused when a non-null argument that is passed to a method is invalid|
+|ArgumentNullException|Raised when a null argument is passed to a method|
+|ArgumentOutOfRangeException|Raised when the value of a an argument is outside the range of valid values|
+|DivideByZeroException|Raised when an integer value is divide by zero|
+|FileNotFoundException|Raised when a physical file does not exist at the specified location|
+|IndexOutOfRangeException|Raised when an array index is outside the lower or upper bound of an array or collection.|
+|InvalidOperationException|RaisedWhen the specified key for accessing a member in a collection does not exist.|
+|NotSupportedException|Raised when a method or operation is not supported|
+|NullReferenceException|Raised when the program access members of null object|
+|OverflowException|Raised when an arithmetic, casting or conversion operation results in an overflow|
+|OutOfMemoryException|Raised when a program does not get enough memory to execute the code|
+|StackOverflowException|Raised when the program does not get enough memory to execute the code|
+|TimeoutException|Raised when the time interval allotted to an operation has expired|
+|NotImplementedException|Raised when a method or property has not been implemented|
+
+
+
+## A Detailed Example
 
 <details closed markdown="block">
     <summary>
