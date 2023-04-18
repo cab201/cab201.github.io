@@ -26,9 +26,9 @@ In this topic, we will learn about polymorphism in C#. Polymorphism is the abili
 ## Polymorphism
 
 <details closed markdown="block">
-    <summary>
-        Click to show/hide explanation
-    </summary>
+<summary>
+    Click to show/hide explanation
+</summary>
 
 Polymorphism is the ability of an object to take on many forms. The most common use of polymorphism in C# occurs when a parent class reference is used to refer to a child class object.
 
@@ -77,9 +77,9 @@ public class Program
 ## Abstract Classes
 
 <details closed markdown="block">
-    <summary>
-        Click to show/hide explanation
-    </summary>
+<summary>
+    Click to show/hide explanation
+</summary>
 
 Abstract classes are classes that cannot be instantiated. They can only be inherited from. Abstract classes are declared using the `abstract` keyword. Abstract classes can contain abstract methods, which are methods that do not have a body. Abstract methods are declared using the `abstract` keyword and are followed by a semicolon, rather than a body. Abstract methods must be implemented in the child class.
 
@@ -137,9 +137,9 @@ public class Program
 ## Interfaces
 
 <details closed markdown="block">
-    <summary>
-        Click to show/hide explanation
-    </summary>
+<summary>
+    Click to show/hide explanation
+</summary>
 
 Interfaces are similar to abstract classes, but they cannot contain any implementation. All methods in an interface are abstract by default. Interfaces are declared using the `interface` keyword. Interfaces can be implemented by classes using the `:` operator.
 

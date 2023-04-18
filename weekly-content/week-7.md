@@ -28,9 +28,9 @@ In this topic, we will learn about exceptions in C#. An exception is an event th
 ### Throwing an Exception
 
 <details closed markdown="block">
-    <summary>
-        Click to show/hide explanation
-    </summary>
+<summary>
+    Click to show/hide explanation
+</summary>
 
 To throw an exception, the `throw` keyword is used. The `throw` keyword is followed by an exception object. The exception object is created using the `new` keyword and the name of the exception class. The exception object is then passed to the `throw` keyword.
 
@@ -43,9 +43,9 @@ throw new Exception("An exception has occurred");
 ### Catching an Exception
 
 <details closed markdown="block">
-    <summary>
-        Click to show/hide explanation
-    </summary>
+<summary>
+    Click to show/hide explanation
+</summary>
 
 To catch an exception, the `try` and `catch` keywords are used. The `try` keyword is followed by a block of code that may throw an exception. The `catch` keyword is followed by a block of code that will be executed if an exception is thrown. The `catch` keyword is followed by the name of the exception class that will be caught. The `catch` block can be followed by a `finally` block, which will always be executed regardless of whether an exception is thrown.
 
@@ -86,13 +86,12 @@ finally
 |NotImplementedException|Raised when a method or property has not been implemented|
 
 
-
 ## A Detailed Example
 
 <details closed markdown="block">
-    <summary>
-        Click to show/hide explanation
-    </summary>
+<summary>
+    Click to show/hide explanation
+</summary>
 
 Consider the implimentation of a bank account class. The bank account class has a `Balance` property that contains the current balance of the account. The `Withdraw` method is used to withdraw money from the account, the `Deposit` method is used to deposit money into the account, and the `Transfer` method is used to transfer money from one account to another.
 
