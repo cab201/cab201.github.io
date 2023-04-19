@@ -26,9 +26,9 @@ In this topic, we will learn about inheritance in C#. Inheritance is a mechanism
 ## Inheritance
 
 <details closed markdown="block">
-    <summary>
-        Click to show/hide explanation
-    </summary>
+<summary>
+    Click to show/hide explanation
+</summary>
 
 Inheritance is a mechanism that allows a class to inherit the members of another class. The class that inherits the members of another class is called the derived class. The class that is inherited from is called the base class. The derived class inherits the members of the base class, but can also add its own members, or override the members of the base class.
 
@@ -94,9 +94,9 @@ class Program
 ## Overriding - `override`, `virtual` and `base`
 
 <details closed markdown="block">
-    <summary>
-        Click to show/hide explanation
-    </summary>
+<summary>
+    Click to show/hide explanation
+</summary>
 
 Inheritance allows a derived class to inherit the members of a base class. However, the derived class can also override the members of the base class. This is useful when the derived class needs to provide a different implementation of a member of the base class.
 
@@ -182,9 +182,9 @@ class Program {
 ## Overriding the Constructor
 
 <details closed markdown="block">
-    <summary>
-        Click to show/hide explanation
-    </summary>
+<summary>
+    Click to show/hide explanation
+</summary>
 
 The constructor of a class cannot be marked as `virtual` or `override`. However, the constructor of a derived class can extend the constructor of the base class by using the `base` keyword.
 
@@ -279,9 +279,9 @@ class Program {
 ## `protected` Access Modifier
 
 <details closed markdown="block">
-    <summary>
-        Click to show/hide explanation
-    </summary>
+<summary>
+    Click to show/hide explanation
+</summary>
 
 The `protected` access modifier is similar to the `private` access modifier, except that it allows derived classes to access the member.
 
@@ -329,9 +329,9 @@ class Program {
 ## Overriding the Object Methods - `ToString()`, `Equals()`, and `GetHashCode()`
 
 <details closed markdown="block">
-    <summary>
-        Click to show/hide explanation
-    </summary>
+<summary>
+    Click to show/hide explanation
+</summary>
 
 The `ToString()`, `Equals()`, and `GetHashCode()` methods are defined in the `System.Object` class, and are used to convert an object to a string, compare two objects, and get the hash code of an object.
 
