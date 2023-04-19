@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Week 9 - Inheritance
+title: Week 9 - Polymorphism
 nav_order: 9
 permalink: /weekly-content/week-9
 ---
 
-# Week 9 - Inheritance
+# Week 9 - Polymorphism
 {: .no_toc }
 
 <details open markdown="block">
@@ -17,451 +17,289 @@ permalink: /weekly-content/week-9
 {:toc}
 </details>
 
-[Do the Practical](../practicals/week-9){: .btn .btn-blue .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Do the Practical](../practicals/week-10){: .btn .btn-blue .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 ---
 
-In this topic, we will learn about inheritance in C#. Inheritance is a mechanism that allows a class to inherit the members of another class for reuse. Inheritance is a powerful feature of object-oriented programming languages.
+In this topic, we will learn about polymorphism in C#. Polymorphism is the ability of an object to take on many forms. The most common use of polymorphism in C# occurs when a parent class reference is used to refer to a child class object.
 
-## Inheritance
+## Polymorphism
 
 <details closed markdown="block">
     <summary>
         Click to show/hide explanation
     </summary>
 
-Inheritance is a mechanism that allows a class to inherit the members of another class. The class that inherits the members of another class is called the derived class. The class that is inherited from is called the base class. The derived class inherits the members of the base class, but can also add its own members, or override the members of the base class.
-
-In C#, inheritance is achieved using the `:` symbol after the name of the class. The class that is inherited from is placed after the `:` symbol.
+Polymorphism is the ability of an object to take on many forms. The most common use of polymorphism in C# occurs when a parent class reference is used to refer to a child class object.
 
 </details>
 
 ```csharp
-class BaseClass
+public class Animal
 {
-    public string BaseProperty { get; }
-
-    public BaseClass(string baseProperty)
+    public virtual void MakeSound()
     {
-        BaseProperty = baseProperty;
-    }
-
-    public void BaseMethod()
-    {
-        Console.WriteLine("Base method");
+        Console.WriteLine("Grrr");
     }
 }
 
-class DerivedClass : BaseClass // Use the : symbol to inherit from a base class
+public class Dog : Animal
 {
-    public string DerivedProperty 
+    public override void MakeSound()
     {
-        get 
-        {
-            return String.Format("{0} as derived property", BaseProperty);
-        }
-    }
-
-    public void DerivedMethod()
-    {
-        Console.WriteLine("Derived method");
+        Console.WriteLine("Woof");
     }
 }
 
-class Program
+public class Cat : Animal
 {
-    static void Main(string[] args)
+    public override void MakeSound()
     {
-        // The base class has a base property and a base method, defined
-        // in the BaseClass class
-        BaseClass baseClass = new BaseClass("Base property");
-        baseClass.BaseMethod(); // Base method
-        Console.WriteLine(baseClass.BaseProperty); // Base property
+        Console.WriteLine("Meow");
+    }
+}
 
-        // Although we did not define a BaseMethod() and BaseProperty in the DerivedClass,
-        // inheritance allows us to use the BaseMethod() and BaseProperty from the BaseClass 
-        DerivedClass derivedClass = new DerivedClass("Base property");
-        derivedClass.BaseMethod(); // Base method
-        Console.WriteLine(derivedClass.BaseProperty); // Base property
+public class Program
+{
+    public static void Main()
+    {
+        Animal unknownAnimal = new Animal();
+        Animal dog = new Dog();
+        Animal cat = new Cat();
 
-        // And also extend with the DerivedMethod() and DerivedProperty
-        derivedClass.DerivedMethod(); // Derived method
-        Console.WriteLine(derivedClass.DerivedProperty); // Base property as derived property
+        unknownAnimal.MakeSound(); // Grrr
+        dog.MakeSound(); // Woof
+        cat.MakeSound(); // Meow
     }
 }
 ```
 
-## Overriding - `override`, `virtual` and `base`
+## Abstract Classes
 
 <details closed markdown="block">
     <summary>
         Click to show/hide explanation
     </summary>
 
-Inheritance allows a derived class to inherit the members of a base class. However, the derived class can also override the members of the base class. This is useful when the derived class needs to provide a different implementation of a member of the base class.
-
-In C#, to allow a derived class to override a member of the base class, the member must be marked with the `virtual` keyword. The `virtual` keyword is used to mark a member as being able to be overridden in a derived class. The `virtual` keyword can be used on methods and properties.
-
-To override a member of the base class, the derived class must use the `override` keyword. The `override` keyword is used to mark a member as being overridden in a derived class. The `override` keyword can be used on methods and properties.
+Abstract classes are classes that cannot be instantiated. They can only be inherited from. Abstract classes are declared using the `abstract` keyword. Abstract classes can contain abstract methods, which are methods that do not have a body. Abstract methods are declared using the `abstract` keyword and are followed by a semicolon, rather than a body. Abstract methods must be implemented in the child class.
 
 </details>
 
-Consider the previous example, but with the `BaseProperty` and `BaseMethod` marked as `virtual` in the `BaseClass` class, then overridden in the `DerivedClass` class.
-
 ```csharp
-
-class BaseClass
+public abstract class Animal
 {
-    // Use the virtual keyword to allow a derived class to override a member
-    public virtual string BaseProperty { get; }
-
-    public BaseClass(string baseProperty)
+    public abstract void MakeSound();
+    public virtual void Eat()
     {
-        BaseProperty = baseProperty;
-    }
-
-    public virtual void BaseMethod()
-    {
-        Console.WriteLine("Base method");
+        Console.WriteLine("Eating some food");
     }
 }
 
-class DerivedClass : BaseClass
+public class Dog : Animal
 {
-    public string DerivedProperty 
+    public override void MakeSound()
     {
-        get 
-        {
-            return String.Format("{0} as derived property", BaseProperty);
-        }
-    }
-
-    // Use the override keyword to override a base class member
-    public override string BaseProperty
-    {
-        get
-        {
-            // Use the base keyword to access the base class member
-            return base.BaseProperty + ", overridden";
-        }
-    }
-
-    public override void BaseMethod() 
-    {
-        Console.WriteLine("Base method, overridden");
-    }
-
-    public void DerivedMethod()
-    {
-        Console.WriteLine("Derived method");
+        Console.WriteLine("Woof");
     }
 }
 
-class Program {
-    static void Main(string[] args)
+public class Cat : Animal
+{
+    public override void MakeSound()
     {
-        // The base class has a base property and a base method, defined
-        // in the BaseClass class
-        BaseClass baseClass = new BaseClass("Base property");
-        baseClass.BaseMethod(); // Base method
-        Console.WriteLine(baseClass.BaseProperty); // Base property
+        Console.WriteLine("Meow");
+    }
+    public override void Eat()
+    {
+        // Cats are picky eaters, so they only eat cat food
+        Console.WriteLine("Eating cat food");
+    }
+}
 
-        // Although we did not define a BaseMethod() and BaseProperty in the DerivedClass,
-        // inheritance allows us to use the BaseMethod() and BaseProperty from the BaseClass 
-        DerivedClass derivedClass = new DerivedClass("Base property");
-        derivedClass.BaseMethod(); // Base method, overridden
-        Console.WriteLine(derivedClass.BaseProperty); // Base property, overridden
+public class Program
+{
+    public static void Main()
+    {
+        Animal dog = new Dog();
+        Animal cat = new Cat();
 
-        // And also extend with the DerivedMethod() and DerivedProperty
-        derivedClass.DerivedMethod(); // Derived method
-        Console.WriteLine(derivedClass.DerivedProperty); // Base property as derived property
+        dog.MakeSound(); // Woof
+        cat.MakeSound(); // Meow
+
+        dog.Eat(); // Eating some food
+        cat.Eat(); // Eating cat food
+
+        Animal unknownAnimal = new Animal(); // Error: Cannot create an instance of the abstract class or interface 'Animal'
     }
 }
 ```
 
-## Overriding the Constructor
+## Interfaces
 
 <details closed markdown="block">
     <summary>
         Click to show/hide explanation
     </summary>
 
-The constructor of a class cannot be marked as `virtual` or `override`. However, the constructor of a derived class can extend the constructor of the base class by using the `base` keyword.
-
-This will call the constructor of the base class, and then the derived class constructor will execute.
+Interfaces are similar to abstract classes, but they cannot contain any implementation. All methods in an interface are abstract by default. Interfaces are declared using the `interface` keyword. Interfaces can be implemented by classes using the `:` operator.
 
 </details>
 
-Consider the following example, where `Student` is derived from `Person`. The `Student` class overrides the `Person` class constructor, and calls the `Person` class constructor using the `base` keyword.
-
 ```csharp
-class Person
+public interface IAnimal
 {
-    public int Id { get; }
-    public string Name { get; }
-    public string Email { get; }
+    void MakeSound();
+    void Eat();
+}
 
-    public Person(int id, string name, string email)
+public interface IFlyable
+{
+    void Fly();
+}
+
+public interface IWalkable
+{
+    void Walk();
+}
+
+public interface ISwimmable
+{
+    void Swim();
+}
+
+public class Dog : IAnimal, IWalkable
+{
+    public void MakeSound()
     {
-        Id = id;
-        Name = name;
-        Email = email;
+        Console.WriteLine("Woof");
+    }
+    public void Eat()
+    {
+        Console.WriteLine("Eating some food");
+    }
+    public void Walk()
+    {
+        Console.WriteLine("Walking");
     }
 }
 
-class Unit {
-    public string Code { get; }
-    public string Name { get; }
-
-    public Unit(string code, string name)
+public class Dove : IAnimal, IFlyable
+{
+    public void MakeSound()
     {
-        Code = code;
-        Name = name;
+        Console.WriteLine("Coo");
+    }
+    public void Eat()
+    {
+        Console.WriteLine("Eating breadcrumbs");
+    }
+    public void Fly()
+    {
+        Console.WriteLine("Flying");
     }
 }
 
-class Student : Person
+public class Fish : IAnimal, ISwimmable
 {
-    private List<Unit> enrolments;
-
-    // Use the base keyword to call the base class constructor,
-    // initializing the Id, Name, and assign a QUT email address
-    public Student(int id, string name) : base(id, name, $"{id}@qut.edu.au")
+    public void MakeSound()
     {
-        // After the base class constructor has executed, this constructor
-        // will execute, and we can initialize the enrolments list
-        enrolments = new List<Unit>();
+        Console.WriteLine("Blub");
     }
-
-    public void Enrol(Unit unit)
+    public void Eat()
     {
-        enrolments.Add(unit);
+        Console.WriteLine("Eating smaller fish");
     }
-
-    public void PrintEnrolments()
+    public void Swim()
     {
-        Console.WriteLine($"Enrolments for {Name} ({Id})");
-        foreach (Unit unit in enrolments)
+        Console.WriteLine("Swimming");
+    }
+}
+
+public class Duck : IAnimal, IFlyable, IWalkable, ISwimmable
+{
+    public void MakeSound()
+    {
+        Console.WriteLine("Quack");
+    }
+    public void Eat()
+    {
+        Console.WriteLine("Eating corn");
+    }
+    public void Fly()
+    {
+        Console.WriteLine("Flying");
+    }
+    public void Walk()
+    {
+        Console.WriteLine("Walking");
+    }
+    public void Swim()
+    {
+        Console.WriteLine("Swimming");
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Dog dog = new Dog();
+        Dove dove = new Dove();
+        Fish fish = new Fish();
+        Duck duck = new Duck();
+
+        // Since all of the classes implement the IAnimal interface, we can use an array of IAnimal to store all of the classes
+        IAnimal[] animals = new IAnimal[] { dog, dove, fish, duck };
+        foreach (IAnimal animal in animals)
         {
-            Console.WriteLine($"{unit.Code} - {unit.Name}");
-        }
-    }
-}
+            animal.MakeSound(); // Woof, Coo, Blub, Quack
+            animal.Eat(); // Eating some food, Eating breadcrumbs, Eating smaller fish, Eating corn
 
-class Program {
-    static void Main(string[] args)
-    {
-        Unit cab201 = new Unit("CAB201", "Programming Principles");
-        Unit cab203 = new Unit("CAB203", "Discrete Structures");
-        Unit cab230 = new Unit("CAB230", "Web Computing");
-        Unit cab202 = new Unit("CAB202", "Microprocessors");
+            // Since animal is an IAnimal, we can't access the methods that are specific to the other interfaces
+            // animal.Walk(); // Error: 'IAnimal' does not contain a definition for 'Walk'...
 
-        Student student = new Student(12345678, "John Smith");
-        student.Enrol(cab201);
-        student.Enrol(cab202);
-        student.Enrol(cab203);
-        student.Enrol(cab230);
-        student.PrintEnrolments();
-        // Enrolments for John Smith (12345678)
-        // CAB201 - Programming Principles
-        // CAB202 - Microprocessors
-        // CAB203 - Discrete Structures
-        // CAB230 - Web Computing
-
-        // The student can also access the Id, Name, and Email properties
-        // from the Person class
-        Console.WriteLine($"{student.Name} ({student.Id}) - {student.Email}");
-        // John Smith (12345678) - 12345678@qut.edu.au
-    }
-}
-```
-
-## `protected` Access Modifier
-
-<details closed markdown="block">
-    <summary>
-        Click to show/hide explanation
-    </summary>
-
-The `protected` access modifier is similar to the `private` access modifier, except that it allows derived classes to access the member.
-
-</details>
-
-Consider the following example, where the `BaseClass` has a `protected` member, and the `DerivedClass` can access the `protected` member.
-
-```csharp
-class BaseClass
-{
-    protected string ProtectedMember { get; }
-
-    public BaseClass(string protectedMember)
-    {
-        ProtectedMember = protectedMember;
-    }
-}
-
-class DerivedClass : BaseClass
-{
-    public DerivedClass(string protectedMember) : base(protectedMember)
-    {
-    }
-
-    public void PrintProtectedMember()
-    {
-        Console.WriteLine(ProtectedMember);
-    }
-}
-
-class Program {
-    static void Main(string[] args)
-    {
-        DerivedClass derivedClass = new DerivedClass("Protected member");
-        derivedClass.PrintProtectedMember(); // Protected member
-
-        // The following line will not compile, because the ProtectedMember
-        // is protected, and cannot be accessed outside of the BaseClass
-        // or DerivedClass
-        Console.WriteLine(derivedClass.ProtectedMember);
-    }
-}
-```
-
-## Overriding the Object Methods - `ToString()`, `Equals()`, and `GetHashCode()`
-
-<details closed markdown="block">
-    <summary>
-        Click to show/hide explanation
-    </summary>
-
-The `ToString()`, `Equals()`, and `GetHashCode()` methods are defined in the `System.Object` class, and are used to convert an object to a string, compare two objects, and get the hash code of an object.
-
-The `ToString()` method is used to convert an object to a string. The `Equals()` method is used to compare two objects. The `GetHashCode()` method is used to get the hash code of an object.
-
-</details>
-
-Consider the following example, where the `Person` class overrides the `ToString()` method, and the `Student` class overrides the `Equals()` and `GetHashCode()` methods.
-
-```csharp
-
-class Person
-{
-    public int Id { get; }
-    public string Name { get; }
-    public string Email { get; }
-
-    public Person(int id, string name, string email)
-    {
-        Id = id;
-        Name = name;
-        Email = email;
-    }
-
-    public override bool Equals(object obj)
-    {
-        if (obj is Person person)
-        {
-            return Id == person.Id;
-        }
-        return false;
-    }
-
-    public override int GetHashCode()
-    {
-        return Id;
-    }
-
-    public override string ToString()
-    {
-        return $"{Name} ({Id}) - {Email}";
-    }
-}
-
-class Student : Person
-{
-    private List<Unit> enrolments;
-
-    public Student(int id, string name) : base(id, name, $"{id}.qut.edu.au")
-    {
-        enrolments = new List<Unit>();
-    }
-
-    public void Enrol(Unit unit)
-    {
-        enrolments.Add(unit);
-    }
-
-    // Student objects are equal if they have the same Id
-    public override bool Equals(object obj)
-    {
-        if (obj is Student student)
-        {
-            return Id == student.Id;
-        }
-        return false;
-    }
-
-    // Student objects have the same hash code if they have the same Id
-    public override int GetHashCode()
-    {
-        return Id;
-    }
-
-    public void PrintEnrolments()
-    {
-        Console.WriteLine($"Enrolments for {Name} ({Id})");
-        foreach (Unit unit in enrolments)
-        {
-            Console.WriteLine($"{unit.Code} - {unit.Name}");
-        }
-    }
-
-    public override string ToString()
-    {
-        string enrolmentsString = "";
-        for (int i = 0; i < enrolments.Count; i++)
-        {
-            Unit unit = enrolments[i];
-            enrolmentsString += $"{unit.Code} - {unit.Name}";
-            if (i < enrolments.Count - 1)
+            // However, we can use the `is` keyword to check if the class implements the interface
+            if (animal is IWalkable)
             {
-                enrolmentsString += ", ";
+                IWalkable walkableAnimal = (IWalkable)animal;
+                walkableAnimal.Walk(); // Walking, Walking
+            }
+            if (animal is IFlyable)
+            {
+                IFlyable flyableAnimal = (IFlyable)animal;
+                flyableAnimal.Fly(); // Flying
+            }
+            if (animal is ISwimmable)
+            {
+                ISwimmable swimmableAnimal = (ISwimmable)animal;
+                swimmableAnimal.Swim(); // Swimming
             }
         }
-        return $"{Name} ({Id}) - {Email} - Enrolments: {enrolmentsString}";
-    }
-}
 
-class Program {
-    static void Main(string[] args)
-    {
-        Unit cab201 = new Unit("CAB201", "Programming Principles");
-        Unit cab203 = new Unit("CAB203", "Discrete Structures");
-        Unit cab230 = new Unit("CAB230", "Web Computing");
-        Unit cab202 = new Unit("CAB202", "Microprocessors");
+        // Outside of the foreach loop, we can access the methods that are specific to the other interfaces
+        dog.Walk(); // Walking
+        dove.Fly(); // Flying
+        fish.Swim(); // Swimming
 
-        Student student = new Student(12345678, "John Smith");
-        student.Enrol(cab201);
-        student.Enrol(cab202);
-        student.Enrol(cab203);
-        student.Enrol(cab230);
+        duck.Walk(); // Walking
+        duck.Fly(); // Flying
+        duck.Swim(); // Swimming
 
-        // The Student class overrides the ToString() method, so the
-        // following line will print the string returned by the
-        // ToString() method
-        Console.WriteLine(student);
-        // John Smith (12345678) - 12345678@qut.edu.au - Enrolments: CAB201 - Programming Principles, CAB202 - Microprocessors, CAB203 - Discrete Structures, CAB230 - Web Computing
+        // Although we can instantiate the IAnimal through the Duck class, this only gives us access to the methods in the IAnimal interface
+        IAnimal duckByInterface = new Duck();
+        duckByInterface.MakeSound(); // Quack
+        duckByInterface.Eat(); // Eating corn
+        // duckByInterface.Walk(); // Error: 'IAnimal' does not contain a definition for 'Walk'...
+        // duckByInterface.Fly(); // Error: 'IAnimal' does not contain a definition for 'Fly'...
+        // duckByInterface.Swim(); // Error: 'IAnimal' does not contain a definition for 'Swim'...
 
-        Student student2 = new Student(12345678, "John Smith");
-
-        // The Student class overrides the Equals() and GetHashCode() methods,
-        // so the following lines will return true
-        Console.WriteLine(student.Equals(student2)); // True
-        Console.WriteLine(student.GetHashCode() == student2.GetHashCode()); // True
-
-        // Note that comparing two objects using the == operator will
-        // return false, because the == operator compares the references
-        // of the objects, not the values of the objects
-        Console.WriteLine(student == student2); // False
+        // We can use the `as` keyword to cast the IAnimal to the Duck class
+        Duck duckByClass = duckByInterface as Duck;
+        duckByClass.MakeSound(); // Quack
+        duckByClass.Eat(); // Eating corn
+        duckByClass.Walk(); // Walking
+        duckByClass.Fly(); // Flying
+        duckByClass.Swim(); // Swimming
     }
 }
 ```
