@@ -18,7 +18,7 @@ permalink: /practicals/week-7
 {:toc}
 </details>
 
-[Read the Cheatsheet](../weekly-content/week-6){: .btn .btn-blue .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Read the Cheatsheet](../weekly-content/week-7){: .btn .btn-blue .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 {: .important-title }
 > Download the Source Code

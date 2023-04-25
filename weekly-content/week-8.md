@@ -109,7 +109,6 @@ To override a member of the base class, the derived class must use the `override
 Consider the previous example, but with the `BaseProperty` and `BaseMethod` marked as `virtual` in the `BaseClass` class, then overridden in the `DerivedClass` class.
 
 ```csharp
-
 class BaseClass
 {
     // Use the virtual keyword to allow a derived class to override a member
@@ -342,7 +341,6 @@ The `ToString()` method is used to convert an object to a string. The `Equals()`
 Consider the following example, where the `Person` class overrides the `ToString()` method, and the `Student` class overrides the `Equals()` and `GetHashCode()` methods.
 
 ```csharp
-
 class Person
 {
     public int Id { get; }
