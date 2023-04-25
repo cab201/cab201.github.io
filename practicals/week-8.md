@@ -23,8 +23,8 @@ permalink: /practicals/week-8
 {: .important-title }
 > Download the Source Code
 > 
-> [Tuesday Class (9-11am)](https://github.com/cab201/prac-07/archive/23se1-tue-9.zip){: .btn .btn-purple .mr-2 }
-> [Wednesday Class (9-11am)](https://github.com/cab201/prac-07/archive/23se1-wed-9.zip){: .btn .btn-purple .mr-2 }
+> [Tuesday Class (9-11am)](https://github.com/cab201/prac-08/archive/23se1-tue-9.zip){: .btn .btn-purple .mr-2 }
+> [Wednesday Class (9-11am)](https://github.com/cab201/prac-08/archive/23se1-wed-9.zip){: .btn .btn-purple .mr-2 }
 
 ---
 
