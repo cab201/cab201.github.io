@@ -17,7 +17,7 @@ permalink: /weekly-content/week-8
 {:toc}
 </details>
 
-[Do the Practical](../practicals/week-9){: .btn .btn-blue .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Do the Practical](../practicals/week-8){: .btn .btn-blue .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 ---
 
