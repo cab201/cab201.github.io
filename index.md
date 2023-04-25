@@ -13,6 +13,8 @@ This website contains notes for the CAB201 - Programming Principles unit at the 
 
 [CAB201 on Canvas](https://canvas.qut.edu.au/courses/2646/modules){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
+[Advance Project](https://autumnssuns.github.io/advance-blazor/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+
 ---
 
 {: .warning }
