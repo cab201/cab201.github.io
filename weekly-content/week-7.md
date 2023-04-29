@@ -154,7 +154,6 @@ public class BadBankAccount {
 The `GoodBankAccount` class below handles the exceptional cases of withdrawing more money than is in the account or transferring more money than is in the account, by throwing an exception.
 
 ```csharp
-
 public class Program
 {
     public static void Main()
