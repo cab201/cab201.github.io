@@ -34,6 +34,8 @@ To get started, click on the links in the sidebar to navigate to the relevant no
 
 [Week 4: Abstractions](https://cab201.github.io/slides/Practical_4)
 
+<!--
+
 ### [Week 3 - Collections](./weekly-content/week-3)
 
 {: .important-title }
@@ -82,6 +84,8 @@ To get started, click on the links in the sidebar to navigate to the relevant no
 > Download the Source Code
 >
 > [Wednesday Class (9-11am)](https://github.com/cab201/prac-08/archive/23se1-wed-9.zip){: .btn .btn-purple .mr-2 }
+
+-->
 
 ### [Week 9 - Polymorphism](./weekly-content/week-9)
 
