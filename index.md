@@ -24,6 +24,16 @@ To get started, click on the links in the sidebar to navigate to the relevant no
 
 ## Quick Links
 
+### Links to Practical Slides
+
+[Week 1: Expressions](https://cab201.github.io/slides/Practical_1)
+
+[Week 2: Structured Programming](https://cab201.github.io/slides/Practical_2)
+
+[Week 3: Objects](https://cab201.github.io/slides/Practical_3)
+
+[Week 4: Abstractions](https://cab201.github.io/slides/Practical_4)
+
 ### [Week 3 - Collections](./weekly-content/week-3)
 
 {: .important-title }
