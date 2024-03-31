@@ -32,7 +32,25 @@ To get started, click on the links in the sidebar to navigate to the relevant no
 
 [Week 3: Objects](https://cab201.github.io/slides/Practical_3)
 
-[Week 4: Abstractions](https://cab201.github.io/slides/Practical_4)
+[Week 4: Abstraction](https://cab201.github.io/slides/Practical_4)
+
+[Week 5: Encapsulation](https://cab201.github.io/slides/Practical_5)
+
+[Week 6: Inheritance](https://cab201.github.io/slides/Practical_6)
+
+[Week 7: Polymorphism](https://cab201.github.io/slides/Practical_7)
+
+[Week 8: Exceptions](https://cab201.github.io/slides/Practical_8)
+
+[Week 9: Streams and Delegates](https://cab201.github.io/slides/Practical_9)
+
+[Week 10: Generics and Collections](https://cab201.github.io/slides/Practical_10)
+
+[Week 11: Testing](https://cab201.github.io/slides/Practical_11)
+
+[Week 12: Assignment Support](https://cab201.github.io/slides/Practical_12)
+
+[Week 13: Support & Review](https://cab201.github.io/slides/Practical_13)
 
 <!--
 
@@ -85,8 +103,6 @@ To get started, click on the links in the sidebar to navigate to the relevant no
 >
 > [Wednesday Class (9-11am)](https://github.com/cab201/prac-08/archive/23se1-wed-9.zip){: .btn .btn-purple .mr-2 }
 
--->
-
 ### [Week 9 - Polymorphism](./weekly-content/week-9)
 
 {: .important-title }
@@ -94,3 +110,5 @@ To get started, click on the links in the sidebar to navigate to the relevant no
 >
 > [Tuesday Class (9-11am)](https://github.com/cab201/prac-09/archive/23se1-tue-9.zip){: .btn .btn-purple .mr-2 }
 > [Wednesday Class (9-11am)](https://github.com/cab201/prac-09/archive/23se1-wed-9.zip){: .btn .btn-purple .mr-2 }
+
+-->
